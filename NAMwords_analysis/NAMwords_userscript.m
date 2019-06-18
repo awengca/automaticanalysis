@@ -90,31 +90,31 @@ aap = aas_addsession(aap,'SESS04');
 % -------------------------------------------------------------------------
 % specify events and contrasts for GLM
 % ------------------------------------------------------------------------------------------------------------------------------
-
     %-------------------------------
     % read the .csv file (JUST 1 SUB ONE SESS FOR NOW)
     %-------------------------------
     
     events = readtable('fiveconditioncode/NAMWORDS1_PL00103_SESS01_FIVECONDITIONCODE.csv');
-    onsets = [];
-    
     [n,m] = size(events);
     
+    conditions = events(:,3);
+    onsetTimes = events(:,2);
+    targetTimes = table;
+    
     for i=1:n
-        fivecondition = events(i,3);
-        if strcmp(fivecondition,'ListenWords') 
-            newOnset=events(i,2);
-            onsets = [onsets,newOnset];
+        fiveCondition = events(i,3);
+        a = table2array(fiveCondition);
+        
+        if strcmp(a,'ListenWord') 
+            fprintf('comparison worked \n')
+            targetTimes(i,1) = onsetTimes(i,1);
         end
     end
-    
-         
-         
-
-        
+    ListenWordTimes = table2array(targetTimes);
+   
     %-------------------------------
     
-    aap = aas_addevent(aap, 'aamod_firstlevel_model', 'PL00103', 'SESS01','ListenWord', onsets, 3);
+    aap = aas_addevent(aap, 'aamod_firstlevel_model', 'PL00103', 'SESS01','ListenWord', ListenWordTimes, 3);
     aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts', '*', 'sameforallsessions', 1 , 'ListenWord','T');
 
 % ------------------------------------------------------------------------------------------------------------------------------
