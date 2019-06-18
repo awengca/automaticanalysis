@@ -7,6 +7,16 @@
         </initialisation>
 		
         <main>
+            
+        <!-- data input -->
+        
+        <module><name>aamod_autoidentifyseries_timtrio</name></module>
+        <module><name>aamod_get_dicom_structural</name></module>
+        <module><name>aamod_convert_structural</name></module>
+        <module><name>aamod_get_dicom_epi</name></module>
+        <module><name>aamod_convert_epis<name><module>
+            
+        
                     
         <!-- preprocessing -->
 

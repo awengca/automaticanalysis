@@ -5,7 +5,7 @@
 clear all;
 aa_ver5;
 
-aap = aarecipe('aap_parameters_ANDREW.xml','ds107_BIDS_tasklist.xml');
+aap = aarecipe('aap_parameters_ANDREW.xml','NAMwords_tasklist.xml');
 % ------------------------------------------------------------------------------------------------------------------------------
 % FSL hack
 % ------------------------------------------------------------------------------------------------------------------------------
@@ -21,12 +21,12 @@ end
 % DEFAULTS AND SANITY CHECKS
 % ------------------------------------------------------------------------------------------------------------------------------
 
-aap.acq_details.root = '/Users/andrewweng/Data/ds000107';
+aap.acq_details.root = '/Users/andrewweng/Documents/Data/NAMWords1_YA';
 aap.directory_conventions.analysisid = 'RESULTS';
 
 % just point rawdatadir at the top level BIDS dir; processBIDS does the rest
 
-aap.directory_conventions.rawdatadir = '/Users/andrewweng/Data/ds000107';
+aap.directory_conventions.rawdatadir = '/Users/andrewweng/Documents/Data/NAMWords1_YA';
 
 % need to specify chooseblerg otherwise aa crashes
 
