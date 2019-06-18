@@ -30,7 +30,7 @@ aap.tasksettings.aamod_smooth.FWHM = 12; % smoothing (Full Width Half Maximum)m
 % Data Directories (for the beast)
 % ------------------------------------------------------------------------------------------------------------------------------
 
-aap.directory_conventions.rawdatadir = '/Users/andrewweng/Documents/Data/NAMWords1_YA/Subjects':
+aap.directory_conventions.rawdatadir = '/Users/andrewweng/Documents/Data/NAMWords1_YA';
 aap.acq_details.root = '/Users/andrewweng/Documents/Data/NAMWords1_YA';
 aap.directory_conventions.analysisid = 'RESULTS';
 
