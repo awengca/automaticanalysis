@@ -17,33 +17,33 @@ if ~contains(currentPath,FSL_binaryDirectory)
     setenv('PATH', correctedPath);
 end
 
+% -----------------------------------------------------------------------------------------
+% Overwrite desired parameter defaults
+% ----------------------------------------------------------------------------------------- 
+
+aap.acq_details.numdummies = 0;	% do not remove any epi files from the collection
+aap.options.NIFTI4D = 1; 			% combine functional DICOMS into one nifti file
+aap.tasksettings.aamod_smooth.FWHM = 12; % smoothing (Full Width Half Maximum)m
+
+
 % ------------------------------------------------------------------------------------------------------------------------------
-% DEFAULTS AND SANITY CHECKS
+% Data Directories (for the beast)
 % ------------------------------------------------------------------------------------------------------------------------------
 
+aap.directory_conventions.rawdatadir = '/Users/andrewweng/Documents/Data/NAMWords1_YA/Subjects':
 aap.acq_details.root = '/Users/andrewweng/Documents/Data/NAMWords1_YA';
 aap.directory_conventions.analysisid = 'RESULTS';
 
-% just point rawdatadir at the top level BIDS dir; processBIDS does the rest
-
-aap.directory_conventions.rawdatadir = '/Users/andrewweng/Documents/Data/NAMWords1_YA';
-
-% need to specify chooseblerg otherwise aa crashes
-
-aap.options.autoidentifystructural_choosefirst = 1;
-aap.options.autoidentifystructural_chooselast = 0;
-
-aap.options.NIFTI4D = 1;
-aap.acq_details.numdummies = 0;	
-aap.acq_details.input.correctEVfordummies = 0;
 
 % ------------------------------------------------------------------------------------------------------------------------------
-% BIDS input
+% Specify data - structural
 % ------------------------------------------------------------------------------------------------------------------------------
 
-aap = aas_processBIDS(aap);
 
-% ------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% -------------------------------------------------------------------------
 % GLM
 % ------------------------------------------------------------------------------------------------------------------------------
 
