@@ -88,28 +88,20 @@ aap = aas_addsession(aap,'SESS04');
 
 
 % -------------------------------------------------------------------------
-% GLM
+% specify events and contrasts for GLM
 % ------------------------------------------------------------------------------------------------------------------------------
 
-% UNITS is 'secs' in event file (even though SPM auditory tutorial uses 'scans')
- 
-% aap.tasksettings.aamod_firstlevel_model.xBF.UNITS = 'scans'; 
-aap.tasksettings.aamod_firstlevel_model.xBF.UNITS = 'secs'; 
- 
-% processBIDS will create the events for the model, but you must define the contrasts
+    %-------------------------------
+    % read the .csv file (JUST 1 SUB ONE SESS FOR NOW)
+    %-------------------------------
+    
+    events = csvread('fiveconditioncode/NAMWORDS1_PL00103_SESS01_FIVECONDITIONCODE.csv',1,0);
+    
+    %-------------------------------
+    
+    aap = aas_addevent(aap, 'aamod_firstlevel_model', 'PL00103', 'SESS01','ListenWord');
+    aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts', '*', 'sameforallsessions', 1 , 'ListenWord','T');
 
-aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts_*', '*', 'sameforallsessions', [1,0,0,0] , 'consonant strings','T');
- 
-aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts_*', '*', 'sameforallsessions', [0,1,0,0] , 'objects','T');
-
-aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts_*', '*', 'sameforallsessions', [0,0,1,0] , 'scrambled objects','T');
-
-aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts_*', '*', 'sameforallsessions', [0,0,0,1] , 'words','T');
-
-% more contrasts
-
-aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts_*', '*', 'sameforallsessions', [0,1,-1,0], 'objects greater than scrambled','T');
-						   
 % ------------------------------------------------------------------------------------------------------------------------------
 % RUN AND REPORT
 % ------------------------------------------------------------------------------------------------------------------------------
