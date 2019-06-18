@@ -20,12 +20,14 @@
                     
         <!-- preprocessing -->
 
-        <module><name>aamod_structuralfromnifti</name></module>
+ <!--       <module><name>aamod_structuralfromnifti</name></module>
         <module><name>aamod_reorienttomiddle_structural</name></module>
 
         <module><name>aamod_epifromnifti</name></module>
         <module><name>aamod_reorienttomiddle_epi</name></module>
 
+        -->
+        
         <module><name>aamod_realign</name></module>  
         <module><name>aamod_coreg_extended</name></module>
         
