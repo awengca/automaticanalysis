@@ -99,7 +99,13 @@ aap = aas_addsession(aap,'SESS04');
     
     conditions = events(:,3);
     onsetTimes = events(:,2);
-    targetTimes = table;
+    
+    % create tables for condition onsets
+    ListenWord = table;
+    ListenNoise = table;
+    RepeatNoise = table;
+    RepeatIncorrect = table;
+    RepeatCorrect = table;
     
     for i=1:n
         fiveCondition = events(i,3);
@@ -107,12 +113,41 @@ aap = aas_addsession(aap,'SESS04');
         
         if strcmp(a,'ListenWord') 
             fprintf('comparison worked \n')
-            targetTimes(i,1) = onsetTimes(i,1);
+            ListenWord(i,1) = onsetTimes(i,1);
         end
+        
+        if strcmp(a,'ListenNoise') 
+            fprintf('comparison worked \n')
+            ListenNoise(i,1) = onsetTimes(i,1);
+        end
+        
+        if strcmp(a,'RepeatIncorrect')
+            fprintf('comparison worked \n')
+            RepeatIncorrect(i,1) = onsetTimes(i,1);
+        end
+        
+        if strcmp(a,'RepeatCorrect')
+            fprintf('comparison worked \n')
+            RepeatCorrect(i,1) = onsetTimes(i,1);
+        end
+        
+        if strcmp(a,'RepeatNoise')
+            fprintf('comparison worked \n')
+            RepeatNoise(i,1) = onsetTimes(i,1);
+        end
+        
     end
-    ListenWordTimes = table2array(targetTimes);
+    
+    % convert the tables to arrays
+    
+    ListenWordTimes = table2array(ListenWord);
+    ListenNoiseTimes = table2array(ListenNoise);
+    RepeatNoiseTimes = table2array(RepeatNoise);
+    RepeatCorrectTimes = table2array(RepeatCorrect);
+    RepeatIncorrectTimes = table2array(RepeatIncorrect);
+    
    
-    %-------------------------------
+    %------------------------------- 
     
 aap = aas_addevent(aap, 'aamod_firstlevel_model', 'PL00103', 'SESS01','ListenWord', ListenWordTimes, 3);
 aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts', '*', 'sameforallsessions', (1) , 'ListenWord','T');
