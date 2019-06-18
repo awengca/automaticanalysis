@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='session' desc='Calculate tSNR from a set of EPI images' modality='MRI'>
+            
+            <qsub>
+                <timeBase>1</timeBase>
+                <memoryBase>1</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>2</permanenceofoutput>
+            
+            <TR></TR>
+            <HParam>100</HParam>
+            
+            <inputstreams>
+                <stream isessential='0'>rois</stream>
+                <stream>epi</stream>
+                <stream isessential='0'>epi_dicom_header</stream>
+            </inputstreams>
+            
+            <outputstreams>
+                <stream>tSNR</stream>
+            </outputstreams>
+            
+            <diagnostic>1</diagnostic>
+            
+        </currenttask>
+    </tasklist>
+</aap>

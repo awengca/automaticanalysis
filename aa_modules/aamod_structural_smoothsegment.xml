@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='subject' mfile_alias='aamod_smooth' desc='SPM smooth tissue segemtations' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>1</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>2</permanenceofoutput>
+            
+            <FWHM>12</FWHM>
+            
+            <inputstreams>
+                <stream isrenameable='1' ismodified='0'>grey</stream>
+				<stream isrenameable='1' ismodified='0'>white</stream>
+				<stream isrenameable='1' ismodified='0'>csf</stream>
+            </inputstreams>
+            
+            <outputstreams>
+                <stream isrenameable='1' ismodified='0'>grey</stream>
+				<stream isrenameable='1' ismodified='0'>white</stream>
+				<stream isrenameable='1' ismodified='0'>csf</stream>
+            </outputstreams>    
+            
+        </currenttask>
+    </tasklist>
+</aap>

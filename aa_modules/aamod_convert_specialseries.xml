@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='special_session' desc='Convert subject special series' modality='X'>
+            
+            <qsub>
+                <timeBase>0.2</timeBase>
+                <memoryBase>0.5</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>1</permanenceofoutput>
+            
+            <numdummies></numdummies>
+            <NIFTI4D></NIFTI4D>
+            
+            <inputstreams>
+                <stream isrenameable='1' isessential='0'>dicom_specialseries</stream>
+            </inputstreams>
+            
+             <outputstreams>
+                <stream isrenameable='1'>specialseries</stream>
+                <stream isrenameable='1'>specialseries_dicom_header</stream>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>
+

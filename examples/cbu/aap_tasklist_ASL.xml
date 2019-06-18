@@ -1,0 +1,27 @@
+<aap>
+    <tasklist>
+        <initialisation>
+            <module><name>aamod_checkparameters</name></module>
+            <module><name>aamod_evaluatesubjectnames</name></module>
+            <module><name>aamod_study_init</name></module>
+            <module><name>aamod_newsubj_init</name></module>
+        </initialisation>
+        <main>
+			<!-- Structural -->
+			<module><name>aamod_autoidentifyseries_timtrio</name></module> 
+            <module><name>aamod_get_dicom_structural</name></module>
+            <module><name>aamod_convert_structural</name></module>
+            <module><name>aamod_biascorrect_structural</name></module>
+			<module><name>aamod_coreg_extended_1</name></module>            
+            <module><name>aamod_norm8</name></module>
+			
+			<!-- ASL -->
+            <module><name>aamod_get_dicom_specialseries</name></module>
+            <module><name>aamod_convert_specialseries</name></module>
+            <module><name>aamod_ASL</name></module>
+            <module><name>aamod_ASL_coreg_extended_2</name></module>
+            <module><name>aamod_ASL_norm_write</name></module>   
+            <module><name>aamod_ASL_smooth</name></module>   
+        </main>
+    </tasklist>
+</aap>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='subject' desc='seed-based functional connectivity' modality='MRI' >
+            
+            <qsub>
+                <timeBase>1</timeBase>
+                <memoryBase>1</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>1</permanenceofoutput>
+            
+            <!-- Can be a file, or a coordinate, specified for individuals or all (*) subjects -->
+            <ROIdesc>
+                <subject></subject>
+                <roi></roi>
+            </ROIdesc>    
+            
+            <radius>2</radius>
+            
+            <correctSeed>1</correctSeed>
+            
+            <summaryFun>mean</summaryFun>
+            
+            <inputstreams>
+                <stream>firstlevel_spm</stream>
+                <stream ismodified='0'>epi</stream>
+            </inputstreams>
+            
+            <outputstreams>
+                <stream>firstlevel_spm</stream>
+                <stream>firstlevel_cons</stream>
+                <stream>firstlevel_spmts</stream>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

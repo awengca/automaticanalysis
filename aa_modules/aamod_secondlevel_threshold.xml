@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='study' desc='Second level thresholding' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>0.3</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>3</permanenceofoutput>
+			
+            <threshold>
+               <correction>FWE</correction> <!-- FWE/FDR/iTT/none -->
+               <p>0.05</p>
+               <extent>0</extent>
+            </threshold>
+			
+            <overlay>
+               <transparency>0</transparency>
+               <nth_slice>3</nth_slice>
+               <template>SPMT1</template>  <!-- averaged_structurals/SPMT1 -->
+           </overlay>
+            
+           <!-- optional text description (included on map) -->
+			
+           <description></description>
+			
+           <inputstreams>
+                <stream diagnostic='1'>secondlevel_spm</stream>
+                <stream isessential='0'>secondlevel_spmts</stream>
+                <stream isessential='0'>secondlevel_spmfs</stream>
+                <!-- the structural stream must be last -->
+                <stream isessential='0' isrenameable='1'>structural</stream>
+            </inputstreams>
+
+            <outputstreams>
+               <stream>secondlevel_thr</stream>
+               <stream>secondlevel_thrslice</stream>
+               <stream>secondlevel_thr3D</stream>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

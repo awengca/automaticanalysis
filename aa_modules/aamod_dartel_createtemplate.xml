@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='study' desc='SPM dartel create template' modality='MRI'>
+            
+            <permanenceofoutput>2</permanenceofoutput>
+            
+            <rform desc='Regularisation type (0 - Linear Elastic Energy; 1 - Membrane Energy; 2 - Bending Energy)'>0</rform>            
+            <specialrequirements desc='need more memory'><highmemory/></specialrequirements>
+            
+			<exclude desc='Exclude subjects from template creation (array of subject indices or cell arays of mrinames or subjnames)'></exclude>
+            
+			<inputstreams>
+                <stream isessential='0' desc='Add an already existing template set (6 Templates [1-6])'>dartel_template</stream>
+            	<stream>dartelimported_grey</stream>
+            	<stream>dartelimported_white</stream>
+            </inputstreams>
+            
+            <outputstreams>
+            	<stream>dartel_template</stream>
+            	<stream>dartel_flowfield</stream>
+                <stream>normalised_dartel_template_grey</stream>
+                <stream>normalised_dartel_template_white</stream>        
+                <stream>dartel_templatetomni_xfm</stream>
+            </outputstreams>
+			            
+        </currenttask>
+    </tasklist>
+</aap>
