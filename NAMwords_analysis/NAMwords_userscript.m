@@ -114,13 +114,13 @@ aap = aas_addsession(aap,'SESS04');
    
     %-------------------------------
     
-    aap = aas_addevent(aap, 'aamod_firstlevel_model', 'PL00103', 'SESS01','ListenWord', ListenWordTimes, 3);
-    aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts', '*', 'sameforallsessions', 1 , 'ListenWord','T');
+aap = aas_addevent(aap, 'aamod_firstlevel_model', 'PL00103', 'SESS01','ListenWord', ListenWordTimes, 3);
+aap = aas_addcontrast(aap, 'aamod_firstlevel_contrasts', '*', 'sameforallsessions', (1) , 'ListenWord','T');
 
 % ------------------------------------------------------------------------------------------------------------------------------
 % RUN AND REPORT
 % ------------------------------------------------------------------------------------------------------------------------------
-
-aa_doprocessing(aap);
+                  
+aa_doprocessing(aap);               
 % aa_report(fullfile(aas_getstudypath(aap),aap.directory_conventions.analysisid));
 aa_close(aap);
