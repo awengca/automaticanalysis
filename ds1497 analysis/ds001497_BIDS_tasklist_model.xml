@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<aap>
+    <tasklist>
+        <initialisation>	
+            <module><name>aamod_study_init</name></module>
+            
+        </initialisation>
+        
+        <main>
+            
+            <!-- preprocessing -->
+
+            <!-- no need for modeling -->
+        
+            <!-- you may need to change domain='*' to domain='session' in aamod_norm_write.xml! -->
+        
+            <!-- modeling -->
+            
+            <!--
+
+            <module><name>aamod_firstlevel_model</name></module>
+            <module><name>aamod_firstlevel_contrasts</name></module> 
+            <module><name>aamod_firstlevel_threshold</name></module>
+            
+            -->
+            
+            <module><name>aamod_secondlevel_model</name> </module>
+            <module><name>aamod_secondlevel_contrasts</name></module>
+            <module><name>aamod_secondlevel_threshold</name>
+                <extraparameters>
+                    <aap><tasklist><currenttask><settings>
+                                    <description>rp + no scrub, 0.05 FWE</description>
+                    </settings></currenttask></tasklist></aap>
+                </extraparameters>
+            </module>
+            
+            
+        </main>
+    </tasklist>
+</aap>
+

@@ -175,6 +175,15 @@ switch task
             mask = dir(fullfile(anadir,'mask.*'));
             mask=strcat(repmat([anadir filesep],[numel(mask) 1]),char({mask.name}));
             aap=aas_desc_outputs(aap,subj,'firstlevel_brainmask',mask);            
+<<<<<<< HEAD
+=======
+			
+			
+% save diagnostic images for QA montage
+save_three_ortho_jpgs(mask,fullfile(aas_getsubjpath(aap,subj),'diagnostic_brainmask'));
+
+
+>>>>>>> andrew_aa/master
         end
         betafns=strcat(repmat([anadir filesep],[numel(allbetas) 1]),char({allbetas.name}));
         aap=aas_desc_outputs(aap,subj,'firstlevel_betas',betafns);
@@ -186,8 +195,27 @@ switch task
         end
 
         %% DIAGNOSTICS...
+<<<<<<< HEAD
         if ~isempty(SPMdes.xX.iC) % model is not empty
             h = firstlevelmodelStats(anadir, [], spm_select('FPList',anadir,'^mask.*'));
+=======
+		
+% don't wait for reporting to plot the design matrix!
+
+spm_DesRep('DesOrth',SPMest.xX);
+saveas(spm_figure('GetWin','Graphics'),fullfile(aas_getsubjpath(aap,subj),'diagnostic_aamod_firstlevel_model_design.jpg'));
+% saveas(spm_figure('GetWin','Graphics'),fullfile(aas_getsubjpath(aap,subj),'diagnostic_aamod_firstlevel_model_design.eps'),'eps');
+spm_figure('Close','Graphics');
+
+% if there is a large number of regressors, the jpg display is unreadable
+% -- we really need a textfile here as well...
+
+writetable(cell2table(SPMest.xX.name'), fullfile(aas_getsubjpath(aap,subj),'diagnostics_REGRESSORS.txt'));     
+        
+        if ~isempty(SPMdes.xX.iC) % model is not empty
+            h = firstlevelmodelStats(anadir, [], spm_select('FPList',anadir,'^mask.*'));
+% % % %             h = firstlevelmodelStats(aap, anadir, [], spm_select('FPList',anadir,'^mask.*'));
+>>>>>>> andrew_aa/master
             print(h.regs,'-djpeg','-r150', fullfile(aas_getsubjpath(aap,subj), 'diagnostic_aamod_firstlevel_model_regs.jpg'));
             print(h.betas,'-djpeg','-r150', fullfile(aas_getsubjpath(aap,subj), 'diagnostic_aamod_firstlevel_model_betas.jpg'));
             
@@ -204,3 +232,18 @@ switch task
     otherwise
         aas_log(aap,1,sprintf('Unknown task %s',task));
 end
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> andrew_aa/master

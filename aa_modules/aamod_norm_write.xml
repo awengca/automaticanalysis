@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <aap>
     <tasklist>
+<<<<<<< HEAD
         <currenttask domain='*' desc='SPM normalisation write (stream EPI)' modality='MRI'>
+=======
+        <currenttask domain='session' desc='SPM normalisation write (stream EPI)' modality='MRI'>
+>>>>>>> andrew_aa/master
             
             <qsub>
                 <timeBase>0.5</timeBase>

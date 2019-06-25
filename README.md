@@ -133,3 +133,7 @@ Peelle JE (2015) Automatic analysis (aa): Efficient neuroimaging
 workflows and parallel processing using Matlab and XML. Frontiers in
 Neuroinformatics 8:90.
 http://dx.doi.org/10.3389/fninf.2014.00090
+<<<<<<< HEAD
+=======
+# andrew_aa
+>>>>>>> andrew_aa/master
