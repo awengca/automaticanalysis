@@ -21,12 +21,12 @@ end
 % DEFAULTS AND SANITY CHECKS
 % ------------------------------------------------------------------------------------------------------------------------------
 
-aap.acq_details.root = '/Users/andrewweng/Data/Tutorial/MoAEpilot_BIDS';
+aap.acq_details.root = '/Users/andrewweng/Data/MoAEpilot';
 aap.directory_conventions.analysisid = 'RESULTS';
 
 % just point rawdatadir at the top level BIDS dir; processBIDS does the rest
 
-aap.directory_conventions.rawdatadir = '/Users/andrewweng/Data/Tutorial/MoAEpilot_BIDS';
+aap.directory_conventions.rawdatadir = '/Users/andrewweng/Data/MoAEpilot';
 
 % need to specify chooseblerg otherwise aa crashes
 

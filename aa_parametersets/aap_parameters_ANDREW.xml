@@ -41,15 +41,15 @@
         <fslsetup desc='Path to fsl setup script, executing before any fsl command' ui='text'></fslsetup>
         <fslshell desc='Shell used to run FSL' ui='text'>bash</fslshell>
         <fsloutputtype desc='Output type used by FSL' ui='text'>NIFTI</fsloutputtype>
-        <freesurferdir desc='Path to freesurfer' ui='dir'>/applications/freesurfer</freesurferdir>
+        <freesurferdir desc='Path to freesurfer' ui='dir'>/Applications/freesurfer</freesurferdir>
         <freesurfershell desc='Shell used to run FreeSurfer' ui='text'>bash</freesurfershell>
-        <freesurfersetup desc='Path to FreeSurfer setup script, executing before any FreeSurfer command' ui='text'>/applications/freesurfer/SetUpFreeSurfer.sh</freesurfersetup>
-        <freesurferenvironment desc='Path to FreeSurfer environmental setup script, executing before any FreeSurfer command' ui='text'>/applications/freesurfer/FreeSurferEnv.sh</freesurferenvironment>
+        <freesurfersetup desc='Path to FreeSurfer setup script, executing before any FreeSurfer command' ui='text'>/Applications/freesurfer/SetUpFreeSurfer.sh</freesurfersetup>
+        <freesurferenvironment desc='Path to FreeSurfer environmental setup script, executing before any FreeSurfer command' ui='text'>/Applications/freesurfer/FreeSurferEnv.sh</freesurferenvironment>
         <neuromagdir desc='Path to Neuromag' ui='dir'></neuromagdir>
         <eeglabdir desc='Path to EEGLAB toolbox' ui='dir'></eeglabdir>
 		<GIFTdir desc='Path to GIFT toolbox' ui='dir'></GIFTdir>
 		<condorwrapper desc='Command to run a job within condor' ui='dir'></condorwrapper>
-		<templatedir desc='Path to folder with various templates (e.g. for aamod_freesurfer_deface)' ui='dir'>/applications/freesurfer/average</templatedir>
+		<templatedir desc='Path to folder with various templates (e.g. for aamod_freesurfer_deface)' ui='dir'>/Applications/freesurfer/average</templatedir>
 		<ROIdir desc='Directory where ROIs (in template space) are kept' ui='text'></ROIdir>
         <ANTSdir desc='Path to Advanced Normalisation Tools (ANTS)' ui='dir'></ANTSdir>
         <fieldtripdir desc='Path to fieltrip toolbox' ui='dir'></fieldtripdir>
