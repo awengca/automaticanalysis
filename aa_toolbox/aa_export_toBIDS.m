@@ -117,6 +117,7 @@ for subj = 1:numel(aap.acq_details.subjects)
     aas_log(aap,false,['INFO: Exporting subject: ' aas_getsubjname(aap,subj)])
     subname = aas_getsubjname(aap,subj);
     suboutname = subname;
+    disp(suboutname);
     if ~isequal(suboutname(1:4),'sub-')
         suboutname = ['sub-' suboutname];
 	end

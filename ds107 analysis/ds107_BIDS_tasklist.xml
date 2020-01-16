@@ -22,7 +22,7 @@
         <module><name>aamod_segment8_multichan</name>
              <extraparameters>
                 <aap><tasklist><currenttask><settings>
-                    <samp>2</samp>
+                    <samp>8</samp>
                 </settings></currenttask></tasklist></aap>
             </extraparameters>
         </module>

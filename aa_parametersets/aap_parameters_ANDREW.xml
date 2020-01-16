@@ -174,6 +174,7 @@
     </gui_controls>
         
     <acq_details>
+        
         <root desc='Root on local machine for processed data' ui='dir'></root>
         <s3>
             <root desc='Root on S3 for processed data' ui='dir'>teststudy</root>

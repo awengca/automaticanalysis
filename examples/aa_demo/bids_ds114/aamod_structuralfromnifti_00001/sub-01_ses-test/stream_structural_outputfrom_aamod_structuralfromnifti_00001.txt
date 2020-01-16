@@ -1,0 +1,2 @@
+MD5	UM18LFwoJ9ufofl0jU8wHg==
+structurals/sub-01_ses-test_T1w_0001.nii
